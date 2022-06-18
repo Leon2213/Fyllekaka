@@ -536,7 +536,8 @@ class _MyHomePageState extends State<MyHomePage> {
     print(latitude + " " + longitude);
 
     final response = await http.get(Uri.parse(
-        'https://group-3-15.pvt.dsv.su.se/app/find?latitude=59.342069&longitude=18.095902&type=pizza'));
+        //'https://group-3-15.pvt.dsv.su.se/app/find?latitude=59.342069&longitude=18.095902&type=pizza'
+        'http://142.93.237.98:8080/app/find?latitude=59.342069&longitude=18.095902&type=pizza'));
 
     if (foodItems[0].getPressed() == false &&
         foodItems[1].getPressed() == false &&
@@ -550,7 +551,8 @@ class _MyHomePageState extends State<MyHomePage> {
     //Testar ta bort merge conflict
 
     final response3 = await http.get(Uri.parse(
-        'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
+        // 'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
+        'http://142.93.237.98:8080/app/find?latitude=' +
             latitude +
             '&longitude=' +
             longitude +
@@ -566,7 +568,8 @@ class _MyHomePageState extends State<MyHomePage> {
             snacks));
 
     final response2 = await http.get(Uri.parse(
-        'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
+        // 'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
+        'http://142.93.237.98:8080/app/find?latitude=' +
             latitude +
             '&longitude=' +
             longitude +
