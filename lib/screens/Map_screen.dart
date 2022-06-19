@@ -4,7 +4,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:math';
 import 'dart:ui';
-// ZZZ: 
+// ZZZ:
 import 'package:custom_info_window/custom_info_window.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
@@ -30,7 +30,7 @@ class Map_screen extends StatefulWidget {
     required this.pizzaPressed,
     required this.kebabPressed,
     required this.snacksPressed,
-    // ZZZ: 
+    // ZZZ:
     required this.controller,
   }) : super(key: key);
 
@@ -43,7 +43,7 @@ class Map_screen extends StatefulWidget {
   bool pizzaPressed = false;
   bool kebabPressed = false;
   bool snacksPressed = false;
-  // ZZZ: 
+  // ZZZ:
   CustomInfoWindowController controller;
 
   // ZZZ: , controller
@@ -79,7 +79,7 @@ class _MapScreenState extends State<Map_screen> {
 
   List<Restaurang> restaurantList = [];
 
-  // ZZZ: 
+  // ZZZ:
   CustomInfoWindowController controller = CustomInfoWindowController();
 
   static LatLng getUserPos() {
@@ -99,7 +99,7 @@ class _MapScreenState extends State<Map_screen> {
     userLatLng = LatLng(latitude, longitude);
   }
 
-  // ZZZ: 
+  // ZZZ:
   _MapScreenState(
       this.latitude,
       this.longitude,
@@ -108,7 +108,7 @@ class _MapScreenState extends State<Map_screen> {
       this.korvPressed,
       this.pizzaPressed,
       this.kebabPressed,
-      this.snacksPressed, 
+      this.snacksPressed,
       this.controller);
 
   //Koordinat Kamera Postioner
@@ -452,25 +452,23 @@ class _MapScreenState extends State<Map_screen> {
               target: userLatLng,
               zoom: 14,
             ),
-            onTap: (position){
+            onTap: (position) {
               controller.hideInfoWindow!();
             },
-            onCameraMove: (position){
+            onCameraMove: (position) {
               controller.onCameraMove!();
             },
             onMapCreated: _onMapCreated,
             polylines: polyline,
             markers: markers,
           ),
-           //ZZZ
+          //ZZZ
           CustomInfoWindow(
-              controller: controller,
+            controller: controller,
             height: 86,
             width: 188,
             offset: 35,
-            
           ),
-          
         ]));
   }
 
@@ -507,7 +505,8 @@ class _MapScreenState extends State<Map_screen> {
     print(latitude + " " + longitude);
 
     final response3 = await http.get(Uri.parse(
-        'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
+        // 'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
+        'http://142.93.237.98:8080/fyllekak/app/find?latitude=' +
             latitude +
             '&longitude=' +
             longitude +
@@ -643,8 +642,6 @@ void createPolyLine() {
     startCap: Cap.roundCap,
     endCap: Cap.buttCap,
   ));
-
-
 }
 
 void setTargetLatLng(LatLng target) {
