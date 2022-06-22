@@ -537,7 +537,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final response = await http.get(Uri.parse(
         //'https://group-3-15.pvt.dsv.su.se/app/find?latitude=59.342069&longitude=18.095902&type=pizza'
-        'http://142.93.237.98:8080/app/find?latitude=59.342069&longitude=18.095902&type=pizza'));
+        'http://142.93.237.98:8080/fyllekak/app/find?latitude=59.342069&longitude=18.095902&type=pizza'));
 
     if (foodItems[0].getPressed() == false &&
         foodItems[1].getPressed() == false &&
@@ -552,7 +552,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final response3 = await http.get(Uri.parse(
         // 'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
-        'http://142.93.237.98:8080/app/find?latitude=' +
+        'http://142.93.237.98:8080/fyllekak/app/find?latitude=' +
             latitude +
             '&longitude=' +
             longitude +
@@ -569,7 +569,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     final response2 = await http.get(Uri.parse(
         // 'https://group-3-15.pvt.dsv.su.se/app/find?latitude=' +
-        'http://142.93.237.98:8080/app/find?latitude=' +
+        'http://142.93.237.98:8080/fyllekak/app/find?latitude=' +
             latitude +
             '&longitude=' +
             longitude +
